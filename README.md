@@ -1,8 +1,3 @@
-
-# Project Title
-
-A brief description of what this project does and who it's for
-
 # Image Management API
 
 This project is a backend API for image CRUD operations, allowing users to upload, retrieve, update, and delete images stored in Cloudinary and MongoDB.
@@ -11,7 +6,7 @@ This project is a backend API for image CRUD operations, allowing users to uploa
 
 - Upload images 
 - Retrieve image 
-- Update existing image records
+- Update existing image record
 - Delete images 
 - Swagger documentation for API routes
 
@@ -63,7 +58,7 @@ Start the server
 To run tests, run the following command
 
 ```bash
-npm run test
+  npm run test
 ```
 
 ## Project Structure
