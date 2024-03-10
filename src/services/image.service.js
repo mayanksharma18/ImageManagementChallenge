@@ -18,16 +18,12 @@ const uploadImage = async (file) => {
         .upload_stream(
           {
             resource_type: "auto",
-            //   context: `mealType=${mealType}|foodName=${foodName}|date=${date}`, // Custom metadata properties
           },
           (error, result) => {
             if (error) {
-              // Handle the error, log it, or throw it if necessary
               console.error("Error uploading image:", error);
               reject(error);
             } else {
-              // Store image information in your database and associate them with the user
-              // Example: Store the public_id or other relevant image information
               uploadedImages.push(result);
               resolve(result);
             }
@@ -36,7 +32,6 @@ const uploadImage = async (file) => {
         .end(image.buffer);
     });
   } catch (err) {
-    // Handle the error here or rethrow it if necessary
     console.error("Error processing image:", err);
     throw err;
   }
@@ -76,7 +71,7 @@ const deleteImage = async (id) => {
   await Image.findByIdAndDelete(id);
 };
 
-const updateImage = async (id, file, updateData) => {
+const updateImage = async (id, file) => {
 
     const image = await Image.findById(id);
     if (!image) {
@@ -105,7 +100,6 @@ const updateImage = async (id, file, updateData) => {
       originalFileName: file.originalname,
       size: file.size,
       contentType: file.mimetype,
-      // If updateData includes fields for the file, you can extract them as done in the uploadImage function
     }, { new: true });
   
     return updatedImage;

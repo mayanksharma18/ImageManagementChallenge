@@ -5,14 +5,18 @@ const {
   deleteImageController,
   getAllImagesController,
   getImageController,
-  updateImageController
+  updateImageController,
 } = require("../../controllers/image.controller");
 const uploadMiddleware = require("../../middlewares/uploadMiddleware");
 
 router.get("/getImage/:id", getImageController);
 router.get("/getAllImages", getAllImagesController);
 router.post("/upload", uploadMiddleware.array("image"), uploadImageController);
-router.put("/update/:id", uploadMiddleware.array("image"), updateImageController);
+router.put(
+  "/update/:id",
+  uploadMiddleware.array("image"),
+  updateImageController
+);
 router.delete("/delete/:id", deleteImageController);
 
 module.exports = router;
@@ -21,13 +25,15 @@ module.exports = router;
  * @swagger
  * tags:
  *   name: Image
- *   description: Image management and retrieval
+ *   description: Image Upload, reterival and deletion API's.
  */
 
 /**
  * @swagger
  * /v1/image/getAllImages:
  *   get:
+ *     tags:
+ *        - Image
  *     summary: Get all images
  *     responses:
  *       200:
@@ -44,6 +50,8 @@ module.exports = router;
  * @swagger
  * /v1/image/getImage/{id}:
  *   get:
+ *     tags:
+ *        - Image
  *     summary: Get an image by ID
  *     parameters:
  *       - in: path
@@ -67,6 +75,8 @@ module.exports = router;
  * @swagger
  * /v1/image/upload:
  *   post:
+ *     tags:
+ *        - Image
  *     summary: Upload an image
  *     requestBody:
  *       content:
@@ -91,6 +101,8 @@ module.exports = router;
  * @swagger
  * /v1/image/update/{id}:
  *   put:
+ *     tags:
+ *        - Image
  *     summary: Update an image
  *     parameters:
  *       - in: path
@@ -122,6 +134,8 @@ module.exports = router;
  * @swagger
  * /v1/image/delete/{id}:
  *   delete:
+ *     tags:
+ *       - Image
  *     summary: Delete an image
  *     parameters:
  *       - in: path

@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:coverage": "jest --coverage",
+    "test": "NODE_ENV=test jest"
   },
   "author": "Mayank Sharma",
   "license": "ISC",
@@ -22,5 +23,23 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
     "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "jest": "^29.7.0",
+    "mocha": "^10.3.0",
+    "mongodb-memory-server": "^9.1.6",
+    "sinon": "^17.0.1",
+    "supertest": "^6.3.4"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageDirectory": "./coverage",
+    "coverageReporters": ["json", "lcov", "text", "clover"]
   }
 }
