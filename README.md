@@ -1,17 +1,18 @@
-
-# Project Title
-
-A brief description of what this project does and who it's for
-
 # Image Management API
 
+
 This project is a backend API for image CRUD operations, allowing users to upload, retrieve, update, and delete images stored in Cloudinary and MongoDB.
+
+TECH Stack
+Express.js
+MongoDB
+Cloudinary
 
 ## Features
 
 - Upload images 
 - Retrieve image 
-- Update existing image records
+- Update existing image record
 - Delete images 
 - Swagger documentation for API routes
 
@@ -63,7 +64,7 @@ Start the server
 To run tests, run the following command
 
 ```bash
-npm run test
+  npm run test
 ```
 
 ## Project Structure
@@ -94,3 +95,13 @@ List of available routes:
 `GET /v1/image/getAllImages` - get all images\
 `PUT /v1/image/update/{id}` - update image \
 `DELETE /v1/image/delete/{id}` - delete image\
+
+
+### Building and running your application through docker
+
+When you're ready, start your application by running:
+`docker compose up --build`.
+
+Your application will be available at http://localhost:3000.
+
+Swagger docs available at localhost:3000/v1/docs
