@@ -21,7 +21,7 @@ app.use(cors());
 app.options("*", cors());
 
 app.use("/v1", routes);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
+app.use('/v1/image/docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
 app.use((req, res, next) => {
   res.status(httpStatus.NOT_FOUND).json({ message: "Not found" });
