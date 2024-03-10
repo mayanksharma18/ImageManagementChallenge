@@ -1,0 +1,23 @@
+components:
+  schemas:
+    Image:
+      type: object
+      required:
+        - imageUrl
+        - cloudinaryId
+      properties:
+        imageUrl:
+          type: string
+          description: URL of the uploaded image
+        cloudinaryId:
+          type: string
+          description: Cloudinary ID of the uploaded image
+        originalFileName:
+          type: string
+          description: Original filename of the uploaded image
+        size:
+          type: number
+          description: Size of the uploaded image in bytes
+        contentType:
+          type: string
+          description: MIME type of the uploaded image
