@@ -89,3 +89,13 @@ List of available routes:
 `GET /v1/image/getAllImages` - get all images\
 `PUT /v1/image/update/{id}` - update image \
 `DELETE /v1/image/delete/{id}` - delete image\
+
+
+### Building and running your application through docker
+
+When you're ready, start your application by running:
+`docker compose up --build`.
+
+Your application will be available at http://localhost:3000.
+
+Swagger docs available at localhost:3000/v1/docs
