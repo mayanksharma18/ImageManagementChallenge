@@ -1,6 +1,12 @@
 # Image Management API
 
+
 This project is a backend API for image CRUD operations, allowing users to upload, retrieve, update, and delete images stored in Cloudinary and MongoDB.
+
+TECH Stack
+Express.js
+MongoDB
+Cloudinary
 
 ## Features
 
